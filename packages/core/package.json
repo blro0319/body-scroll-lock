@@ -26,6 +26,7 @@
     "build:types": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist/types"
   },
   "devDependencies": {
+    "@egjs/agent": "^2.4.3",
     "@tsconfig/node20": "^1.0.1",
     "@types/node": "^20.1.5",
     "typescript": "^5.0.4",
