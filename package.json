@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "@blro/body-scroll-lock",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/blro0319/body-scroll-lock",
+  "workspaces": [
+    "packages/*"
+  ]
+}
