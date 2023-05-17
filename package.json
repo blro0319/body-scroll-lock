@@ -6,5 +6,13 @@
   "repository": "https://github.com/blro0319/body-scroll-lock",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.75"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
 }
