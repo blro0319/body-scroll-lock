@@ -1,12 +1,9 @@
-export function disableBodyScroll(target: Element) {
+export function disableBodyScroll() {
   const state = getGlobalState();
   if (!state) return;
 
-  if (state.entries.get(target)) return;
-  state.entries.set(target, {});
-
-  // If scroll is already disabled, don't set it again.
-  if (state.entries.size > 1) return;
+  state.count++;
+  if (state.count > 1) return;
 
   if (state.isIOS) {
     const html = document.documentElement;
@@ -44,15 +41,13 @@ export function disableBodyScroll(target: Element) {
   }
 }
 
-export function enableBodyScroll(target: Element) {
+export function enableBodyScroll() {
   const state = getGlobalState();
   if (!state) return;
 
-  if (!state.entries.get(target)) return;
-  state.entries.delete(target);
-
-  // If there are still entries left, don't restore the scroll.
-  if (state.entries.size > 0) return;
+  state.count--;
+  if (state.count < 0) state.count = 0;
+  if (state.count > 0) return;
 
   if (state.isIOS) {
     const html = document.documentElement;
@@ -83,7 +78,7 @@ function getGlobalState() {
 function initGlobalState() {
   if (typeof window === "undefined") return;
   window.__bodyScrollLock = {
-    entries: new Map(),
+    count: 0,
     htmlStyles: {
       overflow: "",
       height: "",
@@ -112,7 +107,7 @@ function getIsIOS() {
 declare global {
   interface Window {
     __bodyScrollLock?: {
-      entries: Map<Element, {}>;
+      count: number;
       htmlStyles: {
         overflow: string;
         height: string;
