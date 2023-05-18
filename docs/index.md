@@ -1,25 +1,26 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "Body Scroll Lock"
   text: "Modern body scroll locking library"
-  tagline: My great project tagline
+  tagline: TypeScript, No Dependencies, Lightweight
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /get-started/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: API Reference
+      link: /api/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: iOS Support
+    icon: 🍎
+    details: Tested on real iOS devices.
+  - title: TypeScript
+    icon: 🛠
+    details: Written in TypeScript.
+  - title: Lightweight
+    icon: 📦
+    details: Less than 1KB gzipped.
 ---
-
