@@ -1,5 +1,3 @@
-import getAgent from "@egjs/agent";
-
 export function disableBodyScroll(target: Element) {
   const state = getGlobalState();
   if (!state) return;
@@ -84,7 +82,6 @@ function getGlobalState() {
 }
 function initGlobalState() {
   if (typeof window === "undefined") return;
-  const agent = getAgent();
   window.__bodyScrollLock = {
     entries: new Map(),
     htmlStyles: {
@@ -101,9 +98,15 @@ function initGlobalState() {
     },
     scrollX: 0,
     scrollY: 0,
-    isIOS: agent.os.name === "ios",
-    isAndroid: agent.os.name === "android",
+    isIOS: getIsIOS(),
   };
+}
+function getIsIOS() {
+  if (typeof window === "undefined") return false;
+  return (
+    /iPad|iPhone|iPod/.test(navigator.platform) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
 }
 
 declare global {
@@ -125,7 +128,6 @@ declare global {
       scrollX: number;
       scrollY: number;
       isIOS: boolean;
-      isAndroid: boolean;
     };
   }
 }
