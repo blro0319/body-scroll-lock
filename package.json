@@ -11,11 +11,9 @@
     "vitepress": "^1.0.0-alpha.75"
   },
   "scripts": {
-    "build": "npm run core:build && npm run vue:build && npm run docs:build",
+    "build": "npm run core:build && npm run docs:build",
     "core:dev": "npm run dev --workspaces=packages/core",
     "core:build": "npm run build --workspaces=packages/core",
-    "vue:dev": "npm run dev --workspaces=packages/vue",
-    "vue:build": "npm run build --workspaces=packages/vue",
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
