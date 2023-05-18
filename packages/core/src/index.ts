@@ -70,6 +70,14 @@ export function enableBodyScroll() {
   }
 }
 
+export function resetBodyScroll() {
+  const state = getGlobalState();
+  if (!state) return;
+
+  state.count = 0;
+  enableBodyScroll();
+}
+
 function getGlobalState() {
   if (typeof window === "undefined") return;
   if (!window.__bodyScrollLock) initGlobalState();
