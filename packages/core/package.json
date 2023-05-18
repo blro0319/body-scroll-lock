@@ -14,12 +14,6 @@
   "main": "dist/body-scroll-lock.umd.cjs",
   "module": "dist/body-scroll-lock.js",
   "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/body-scroll-lock.js",
-      "require": "./dist/body-scroll-lock.umd.cjs"
-    }
-  },
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build && npm run build:types",
