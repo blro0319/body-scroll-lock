@@ -9,22 +9,22 @@
   },
   "type": "module",
   "files": [
-    "dist"
+    "./dist"
   ],
-  "main": "dist/body-scroll-lock.umd.cjs",
-  "module": "dist/body-scroll-lock.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/body-scroll-lock.umd.cjs",
+  "module": "./dist/body-scroll-lock.mjs",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/body-scroll-lock.js",
-      "require": "./dist/body-scroll-lock.umd.cjs"
+      "import": "./dist/body-scroll-lock.mjs",
+      "require": "./dist/body-scroll-lock.cjs"
     }
   },
   "scripts": {
-    "dev": "vite --host",
-    "build": "tsc && vite build && npm run build:types",
-    "build:types": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist/types"
+    "dev": "vite --host --port 3190",
+    "build": "vite build && npm run build:types",
+    "build:types": "tsc --project tsconfig.build.json"
   },
   "devDependencies": {
     "@tsconfig/node20": "^1.0.2",

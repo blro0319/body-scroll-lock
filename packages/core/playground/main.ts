@@ -2,16 +2,10 @@ import { disableBodyScroll, enableBodyScroll } from "../src";
 
 const disableButton = document.getElementById("disable");
 disableButton?.addEventListener("click", () => {
-  if (!target) return;
-  disableBodyScroll(target, {
-    reserveScrollbar: true,
-  });
+  disableBodyScroll();
 });
 
 const enableButton = document.getElementById("enable");
 enableButton?.addEventListener("click", () => {
-  if (!target) return;
-  enableBodyScroll(target);
+  enableBodyScroll();
 });
-
-const target = document.getElementById("target");
