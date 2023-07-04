@@ -14,6 +14,7 @@
     "build": "npm run core:build && npm run docs:build",
     "core:dev": "npm run dev --workspaces=packages/core",
     "core:build": "npm run build --workspaces=packages/core",
+    "core:publish": "npm publish --workspaces=packages/core --access=public",
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
