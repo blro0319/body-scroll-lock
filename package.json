@@ -1,22 +1,39 @@
 {
-  "private": true,
   "name": "@blro/body-scroll-lock",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
-  "repository": "https://github.com/blro0319/body-scroll-lock",
-  "workspaces": [
-    "packages/*"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blro0319/body-scroll-lock.git",
+    "directory": "packages/core"
+  },
+  "type": "module",
+  "files": [
+    "./dist"
   ],
-  "devDependencies": {
-    "vitepress": "1.0.0-beta.5"
+  "main": "./dist/body-scroll-lock.umd.cjs",
+  "module": "./dist/body-scroll-lock.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/body-scroll-lock.mjs",
+      "require": "./dist/body-scroll-lock.cjs"
+    }
   },
   "scripts": {
-    "build": "npm run core:build && npm run docs:build",
-    "core:dev": "npm run dev --workspaces=packages/core",
-    "core:build": "npm run build --workspaces=packages/core",
-    "core:publish": "npm publish --workspaces=packages/core --access=public",
+    "dev": "vite --host --port 3190",
+    "build": "vite build && npm run build:types",
+    "build:types": "tsc --project tsconfig.build.json",
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^1.0.2",
+    "@types/node": "^20.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9",
+    "vitepress": "1.0.0-beta.5"
   }
 }
