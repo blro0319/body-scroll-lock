@@ -2,8 +2,6 @@
 
 ## Installation
 
-### Install with pip
-
 ::: code-group
 
 ```bash [npm]
