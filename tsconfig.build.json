@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "outDir": "dist/types",
+    "outDir": "dist",
     "paths": {
       "~/*": ["src/*"]
     }

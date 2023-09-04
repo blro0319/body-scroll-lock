@@ -6,11 +6,8 @@ export default defineConfig({
     outDir: "./dist",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "@blro/body-scroll-lock",
-      fileName(format) {
-        if (format === "es") return "body-scroll-lock.mjs";
-        return "body-scroll-lock.cjs";
-      },
+      fileName: "index",
+      formats: ["cjs", "es"],
     },
   },
   resolve: {

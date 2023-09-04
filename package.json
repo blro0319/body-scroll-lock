@@ -11,14 +11,14 @@
   "files": [
     "./dist"
   ],
-  "main": "./dist/body-scroll-lock.umd.cjs",
-  "module": "./dist/body-scroll-lock.mjs",
-  "types": "./dist/types/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/body-scroll-lock.mjs",
-      "require": "./dist/body-scroll-lock.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
