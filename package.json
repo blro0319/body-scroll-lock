@@ -22,10 +22,11 @@
     }
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite --host --port 3190",
-    "build": "vite build && npm run build:types",
+    "build": "vite build && pnpm build:types",
     "build:types": "tsc --project tsconfig.build.json",
-    "deploy": "npm run build && npm publish --access=public",
+    "deploy": "pnpm build && pnpm publish --access=public",
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
