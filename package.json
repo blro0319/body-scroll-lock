@@ -1,6 +1,6 @@
 {
   "name": "@blro/body-scroll-lock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
     }
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "dev": "vite --host --port 3190",
     "build": "vite build && pnpm build:types",
     "build:types": "tsc --project tsconfig.build.json",
